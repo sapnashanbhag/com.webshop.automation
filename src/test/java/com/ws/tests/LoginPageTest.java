@@ -58,4 +58,25 @@ public class LoginPageTest extends BaseTest {
         Assert.assertTrue(loginPage.isForgotPaswdLinkDisplayed());
     }
 
+    @Test(priority=1, dataProvider = "exceltestdata")
+    public void testMultipleLogin(String email, String password){
+        logger = report.createTest("Validate login");
+        //first go to homepage and click login link
+        homePage.clickLoginLink();
+        logger.pass("clicked login link");
+        //it takes to login page and actions in login page
+        loginPage.enterEmail(email);
+        logger.pass("entered email");
+        loginPage.enterPassword(password);
+        logger.pass("entered password");
+        loginPage.clickLoginButton();
+        logger.pass("clicked login button");
+        String emailID = loginPage.getUserloggedinText();
+
+        Assert.assertTrue(emailID.contains(".com"));
+        logger.pass("validated user logged in");
+        loginPage.clicklogoutlink();
+        logger.pass("clicked logout link");
+    }
+
 }

@@ -6,6 +6,7 @@
         <classes>
             <class name="com.ws.tests.BooksPageTest"/>
             <class name="com.ws.tests.LoginPageTest"/>
+            <class name="com.ws.tests.GiftCardsPageTest"/>
          </classes>
     </test>
 </suite>

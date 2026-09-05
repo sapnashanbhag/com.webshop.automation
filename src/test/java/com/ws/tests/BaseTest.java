@@ -2,21 +2,29 @@ package com.ws.tests;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.ws.driver.DriverScript;
 import com.ws.page.BooksPage;
+import com.ws.page.GiftCardsPage;
 import com.ws.page.HomePage;
 import com.ws.page.LoginPage;
 import com.ws.utils.ExcelUtil;
+import com.ws.utils.HelperUtil;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 
+import java.io.IOException;
+
 public class BaseTest extends DriverScript {
     HomePage homePage;
     LoginPage loginPage;
     BooksPage booksPage;
+    GiftCardsPage giftCardsPage;
     public static ExtentReports report;
     public static ExtentTest logger;
 
@@ -33,9 +41,19 @@ public class BaseTest extends DriverScript {
         homePage = new HomePage();
         loginPage = new LoginPage();
         booksPage = new BooksPage();
+        giftCardsPage = new GiftCardsPage();
     }
     @AfterMethod
-    public void tearDown() throws InterruptedException{
+    public void tearDown(ITestResult result) throws InterruptedException{
+        if(result.getStatus()==ITestResult.FAILURE)
+        {
+            try {
+                logger.fail("Validation failed",
+                        MediaEntityBuilder.createScreenCaptureFromPath(HelperUtil.captureScreenshots(driver)).build());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         Thread.sleep(3000);
         report.flush();
         quitDriver();

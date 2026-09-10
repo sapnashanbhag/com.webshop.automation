@@ -5,10 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.ws.driver.DriverScript;
-import com.ws.page.BooksPage;
-import com.ws.page.GiftCardsPage;
-import com.ws.page.HomePage;
-import com.ws.page.LoginPage;
+import com.ws.page.*;
 import com.ws.utils.ExcelUtil;
 import com.ws.utils.HelperUtil;
 import org.testng.ITestListener;
@@ -25,6 +22,10 @@ public class BaseTest extends DriverScript {
     LoginPage loginPage;
     BooksPage booksPage;
     GiftCardsPage giftCardsPage;
+    ComputersPage computersPage;
+    DesktopsPage desktopsPage;
+    BuildYourOwnComputerPage buildYourOwnComputerPage;
+    BuildYourOwnCheapComputerPage buildYourOwnCheapComputerPage;
     public static ExtentReports report;
     public static ExtentTest logger;
 
@@ -42,6 +43,10 @@ public class BaseTest extends DriverScript {
         loginPage = new LoginPage();
         booksPage = new BooksPage();
         giftCardsPage = new GiftCardsPage();
+        computersPage = new ComputersPage();
+        desktopsPage = new DesktopsPage();
+        buildYourOwnComputerPage = new BuildYourOwnComputerPage();
+        buildYourOwnCheapComputerPage = new BuildYourOwnCheapComputerPage();
     }
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException{

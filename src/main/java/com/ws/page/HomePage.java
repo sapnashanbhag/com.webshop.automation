@@ -10,6 +10,8 @@ public class HomePage extends DriverScript {
     @FindBy(linkText = "Log in") WebElement loginLink; //@FindBy is coming from selenium
     @FindBy(xpath="(//a[contains(text(),'Books')])[1]") WebElement BooksMenu;
     @FindBy(xpath="(//a[contains(text(),'Gift')])[1]") WebElement GiftCardsMenu;
+    @FindBy(xpath="(//a[contains(text(),'Computers')])[1]") private WebElement ComputersMenu;
+    @FindBy(xpath = "(//a[contains(text(),'Desktops')])[1]") private WebElement desktopsMenu;
     //**********PAge Initilisation*******//
     public HomePage()
     {
@@ -23,4 +25,10 @@ public class HomePage extends DriverScript {
         loginLink.click();
     }
     public void clickGiftCardsMenu(){ GiftCardsMenu.click();}
+    public void clickComputersMenu() {
+        ComputersMenu.click();
+    }
+    public void clickdesktopsMenu(){
+        desktopsMenu.click();
+    }
 }

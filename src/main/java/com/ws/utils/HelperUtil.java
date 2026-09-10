@@ -14,7 +14,8 @@ public class HelperUtil extends DriverScript {
     public static String captureScreenshots(WebDriver driver){
       File src =   ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
       String screenshotPath =
-              System.getProperty("user.dir")+"./src/test/resources/testreports/screenshots/screen1.png";
+              System.getProperty("user.dir")+""+
+                      "./src/test/resources/testreports/screenshots/screen_"+System.currentTimeMillis()+".png";
         try {
             FileHandler.copy(src,new File(screenshotPath));
         } catch (IOException e) {

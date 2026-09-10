@@ -23,9 +23,9 @@ public class LoginPageTest extends BaseTest {
         logger.pass("entered password");
         loginPage.clickLoginButton();
         logger.pass("clicked login button");
-        String emailID = loginPage.getUserloggedinText();
-
-        Assert.assertTrue(emailID.contains(".com"));
+        String emailID2 = loginPage.getUserloggedinText();
+        System.out.println(emailID2);
+        Assert.assertTrue(emailID2.contains(".com"));
         logger.pass("validated user logged in");
         loginPage.clicklogoutlink();
         logger.pass("clicked logout link");

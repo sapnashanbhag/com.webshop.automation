@@ -12,6 +12,7 @@ public class HomePage extends DriverScript {
     @FindBy(xpath="(//a[contains(text(),'Gift')])[1]") WebElement GiftCardsMenu;
     @FindBy(xpath="(//a[contains(text(),'Computers')])[1]") private WebElement ComputersMenu;
     @FindBy(xpath = "(//a[contains(text(),'Desktops')])[1]") private WebElement desktopsMenu;
+    @FindBy(xpath = "(//a[contains(text(),'Apparel & Shoes')])[1]") private WebElement apparelShoesMenu;
     //**********PAge Initilisation*******//
     public HomePage()
     {
@@ -30,5 +31,11 @@ public class HomePage extends DriverScript {
     }
     public void clickdesktopsMenu(){
         desktopsMenu.click();
+    }
+    public void clickApparelShoesMenu(){
+        apparelShoesMenu.click();
+    }
+    public void clickApparelnShoesMenu(){
+        clickApparelShoesMenu();
     }
 }

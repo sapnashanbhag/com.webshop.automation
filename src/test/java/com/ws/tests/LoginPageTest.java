@@ -8,6 +8,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+//This class is used to test the login page functionality of the application.
+// It extends the BaseTest class which contains the setup and teardown methods for the tests.
+// The class contains multiple test methods to validate different scenarios of the login page such as valid login, login with empty credentials, invalid login credentials, and checking if the forgot password link is displayed. It also includes a data-driven test method to validate multiple login attempts using data from an Excel file.
 public class LoginPageTest extends BaseTest {
 
     @Test(priority=1)

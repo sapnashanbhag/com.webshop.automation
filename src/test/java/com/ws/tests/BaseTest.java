@@ -21,6 +21,8 @@ public class BaseTest extends DriverScript {
     HomePage homePage;
     LoginPage loginPage;
     BooksPage booksPage;
+    ApparelnShoesPage apparelnShoesPage;
+    ApparelnShoesPage apparelShoesPage;
     GiftCardsPage giftCardsPage;
     ComputersPage computersPage;
     DesktopsPage desktopsPage;
@@ -42,6 +44,8 @@ public class BaseTest extends DriverScript {
         homePage = new HomePage();
         loginPage = new LoginPage();
         booksPage = new BooksPage();
+        apparelnShoesPage = new ApparelnShoesPage();
+        apparelShoesPage = apparelnShoesPage;
         giftCardsPage = new GiftCardsPage();
         computersPage = new ComputersPage();
         desktopsPage = new DesktopsPage();

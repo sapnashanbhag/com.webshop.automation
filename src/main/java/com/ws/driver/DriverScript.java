@@ -52,13 +52,15 @@ public class DriverScript {
         launchApplication();
     }
     //used to launch application and called inside initApplication
-    public void launchApplication(){
+    public void launchApplication() {
 
         String url = prop.getProperty("url");
-       // if(url = qa) //line to be addedd if different urls for different env's
+        // if(url = qa) //line to be addedd if different urls for different env's
         driver.get(url);
     }
-    /* method used to quit the driver */
+
+
+   /* method used to quit the driver */
     public void quitDriver(){
         driver.quit();
     }
